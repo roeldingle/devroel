@@ -4,8 +4,9 @@ class Menu extends MX_Controller {
 
 	public function index()
 	{
-		$aData['sTitle'] = "Bar Controller roel ".base_url();
+		$aData['sProject_name'] = 'My WebSlice';
 		$aData['aMenuData'] = $this->getClass->select('tb_menu', '','rows');
+		
 		return $this->load->view('v_'.strtolower(__CLASS__),$aData);
 	}
 }
