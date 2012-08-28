@@ -5,6 +5,7 @@ class Home extends MX_Controller {
 	public function index()
 	{
 		$aData['aModule'] = Modules::run('menu');
+		$aData['aMenuData'] = $this->getClass->select('tb_menu', '','rows');
 		$aData['aUserData'] = $this->getClass->select('tb_user', '','rows');
 		$this->load->view('v_'.strtolower(__CLASS__),$aData);
 	}

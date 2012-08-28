@@ -1,8 +1,1 @@
-
-	body{font-family: Lucida Sans Unicode, Geneva, sans-serif;font-size:13px;}
-	a{text-decoration:none;}
-	#menu_wrap ul{margin-left:100px;}
-	#menu_wrap li:hover{background:#3d3d3d;}
-	#menu_wrap{background:#000;border-bottom:2px solid red;height:50px;}
-	#menu_wrap li{float:left;display:block;width:10%;text-align:center;height:35px;padding-top:15px;}
-	#menu_wrap li a{color:#fff;}
+.browser_wrap{height:50px;width:250px;background:url('../img/browsers.jpg');border:1px solid red;}

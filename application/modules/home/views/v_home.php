@@ -30,6 +30,7 @@
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 	
 	<script  src="home/assets/js/libs/jquery.js" type="text/javascript"></script>
+	
   </head>
 
   <body>
@@ -43,42 +44,95 @@
 			  </a>
 			  <a class="brand" href="#"><?php echo $sProject_name;?></a>
 			  
-			  <?php echo $aModule;?>
+			  <div class="nav-collapse">
+				<ul class="nav">
+				<?php
+					foreach($aMenuData as $key=>$val){
+						echo '<li id="page_id_'.$key.'"></i><a href="javascript: Home.page('.$key.');" >'.$val['tm_name'].'</a></li>';
+					}
+				?>
+				</ul>
+			  </div><!--/.nav-collapse -->
 			  
 			</div>
 		  </div>
 		</div>
 
 		<div class="container">
-			 <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-      </div>
+			<div id="myCarousel" class="carousel slide">
+	  <!-- Carousel items -->
+				  <div class="carousel-inner">
+				  <?php
+					foreach($aMenuData as $key=>$val){?>
+					
+					<div class="<?php echo($key == 0)?"active":"";?> item">
+					
+						<div class="hero-unit" style="height:500px">
+							<h1><?php echo ucwords($val['tm_name']);?></h1>
+							<p><?php echo Modules::run($val['tm_name']);?></p>
+						</div>
 
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-       </div>
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-      </div>
+					</div>
+					<?php }?>
+					
+					
+					
+				  </div>
+			  <!-- Carousel nav 
+			  <a class="carousel-control left" href="#" data-slide="prev">&lsaquo;</a>
+			  <a class="carousel-control right" href="#" data-slide="next">&rsaquo;</a>-->
+			</div>
+			 <!-- Main hero unit for a primary marketing message or call to action
+		  <div class="hero-unit">
+			<h1>Hello, world!</h1>
+			<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+			<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+		  </div>
+
+		  <!-- Example row of columns --
+		  <div class="row">
+			<div class="span4">
+			  <h2>Heading</h2>
+			  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+			  <p><a class="btn" href="#">View details &raquo;</a></p>
+			</div>
+			<div class="span4">
+			  <h2>Heading</h2>
+			  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+			  <p><a class="btn" href="#">View details &raquo;</a></p>
+		   </div>
+			<div class="span4">
+			  <h2>Heading</h2>
+			  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+			  <p><a class="btn" href="#">View details &raquo;</a></p>
+			</div>
+		  </div> -->
 
 		</div>
-
+		<footer id="footer">
+		<div class="container">
+		<hr />
+			<div class="row">
+			<div class="span4">
+			  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+			  
+			</div>
+			<div class="span4">
+			  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+			 
+		   </div>
+			<div class="span4">
+			  <p><a class="btn btn-primary btn-large">Download My Resume &raquo;</a></p>
+			</div>
+		  </div>
+		</div>
+		</footer>
 		
+		<script  src="home/assets/js/libs/bootstrap.js" type="text/javascript"></script>
 		<script  src="home/assets/js/apps/custom.js" type="text/javascript"></script>
+		
+		
 	</body>
+	
+	
 

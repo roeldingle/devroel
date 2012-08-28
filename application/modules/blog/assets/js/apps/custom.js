@@ -14,8 +14,6 @@ $(function(){
 	$(".right").click(function(){
 		$('.carousel').carousel('prev');
 	});
-	
-	
 
 });
 
